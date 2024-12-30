@@ -20,9 +20,13 @@
 def calc_control_digit(digits: str):
     total = 0
     weights = [1, 2, 1, 2, 1, 2, 1, 2]
+
     for w, d in zip(weights, digits):
         mul = w * int(d)
         div, mod = divmod(mul, 10)
         mul = div + mod
         total += mul
     return (10 - (total % 10)) % 10  # last % 10 is needed for a case when we have multiply of 10
+
+
+calc_control_digit("11111111")
