@@ -1,10 +1,12 @@
 
+# google_client = Client()
 n = 10
 a = 4
 def calc_age(n):
-    global a
+    # google_client...
+    # global a
     print(a)
-    a = 3
+    # a = 3
     if n == 3:
         return "t"
     else:
