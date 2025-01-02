@@ -1,4 +1,7 @@
+
+print("NNNNNNNNNNNN")
 # dict as mapper
+
 def map_names():
     d = {}
     while True:
@@ -55,5 +58,5 @@ def input_persons():
         # }
     return ret_dict
 
-print(input_persons())
+# print(input_persons())
 
