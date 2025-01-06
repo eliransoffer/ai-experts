@@ -41,7 +41,12 @@ for w in filter(str.islower, words):
 #         filtered.append(elem)
 # return filtered
 
-# print("".join(filter(lambda c: c not in "aAeEiIoOuU", "hello")))
+for i in filter(lambda c: c.lower() not in "aeiou", "hello"):
+    print(i)
+
+
+
+print("".join(filter(lambda c: c not in "aAeEiIoOuU", "hello")))
 
 
 
@@ -49,3 +54,21 @@ for w in filter(str.islower, words):
 # print(set(filter_obj))
 
 
+students = [
+    {"name": "Moshe", "grade": 89},
+    {"name": "David", "grade": 93},
+    {"name": "Jack", "grade": 97},
+]
+print(list(filter(lambda s: s["grade"] > 90, students)))
+
+"".join(['a','v'])
+
+# if w == "r" or w == "y" or w =="t"
+# if w in "rytu"
+
+def remove_vowels(word):
+    # l = list(filter(lambda c: c.lower() not in "aeiou", word))
+    # return "".join(l)
+    return "".join(filter(lambda c: c.lower() not in "aeiou", word))
+
+print(remove_vowels("hello"))
