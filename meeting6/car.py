@@ -1,38 +1,37 @@
 from pprint import pprint
 # manufacturer = "drgdgf"
 
+counter = 10
+
 class Car:
-    counter = 0
+
+    counter = 1
+
     def __init__(self, manufacturer, model, color, tank_capacity=50):
+        self.id = Car.counter
+        Car.counter += 1
         self.manufacturer = manufacturer
         self.model = model
         self.color = color
         self.tank_capacity = tank_capacity
         self._km = 0
         self._fuel = 0
-        self.id = Car.counter
-        Car.counter += 1
+
 
     def __str__(self):
         return f"{self.manufacturer} | {self.model} | {self._km}"
 
     def __repr__(self):
-        # return self.manufacturer
-        return self.__str__()
+        return str(self.id)
+        # return self.__str__()
 
     def __len__(self):
         return 6
-
-
-
 
     def add_fuel(self, liters):
         if liters + self._fuel > self.tank_capacity:
             raise Exception("Exceeds tank capacity")
         self._fuel += liters
-
-
-
 
 
 if __name__ == '__main__':
@@ -56,6 +55,11 @@ if __name__ == '__main__':
     print(len("dsfsdfsdf"))
     print(len(car2))
     print([car1, car2])
+    print(counter)
+    print(Car.counter)
+    print(car2.counter)
+    print(car2.id)
+
 
 "ddd".__str__()
 

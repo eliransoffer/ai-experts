@@ -1,7 +1,7 @@
 class USDConverter:
     def __init__(self):
         # stores rates FROM usd maps from currency to rate
-        self.exchange_rates = {}
+        self.exchange_rates: dict[str, float] = {}
         # 'NIS': 3.5,  -> $1 = 3.5NIS
         # 'EURO': 0.98, ->
         # 'USD': 1
@@ -14,6 +14,7 @@ class USDConverter:
             return amnt * self.exchange_rates[currency]
         else:
             raise Exception(f"Currency {currency} does not exist")
+            # return "Sdsdfdf"
 
     def convert_to_usd(self, currency, amnt):
         if currency in self.exchange_rates:
@@ -21,3 +22,6 @@ class USDConverter:
         else:
             raise Exception(f"Currency {self.currency} does not exist")
 
+
+# num: int = 10
+# num = "Ttt"
