@@ -2,6 +2,7 @@ from pprint import pprint
 # manufacturer = "drgdgf"
 
 class Car:
+    counter = 0
     def __init__(self, manufacturer, model, color, tank_capacity=50):
         self.manufacturer = manufacturer
         self.model = model
@@ -9,6 +10,8 @@ class Car:
         self.tank_capacity = tank_capacity
         self._km = 0
         self._fuel = 0
+        self.id = Car.counter
+        Car.counter += 1
 
     def __str__(self):
         return f"{self.manufacturer} | {self.model} | {self._km}"
