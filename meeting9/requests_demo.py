@@ -15,8 +15,22 @@ import requests
 
 response = requests.get("https://api.chucknorris.io/jokes/random")
 print(response.status_code)
-pprint(response.text)
+# pprint(response.text)
 # json.loads()
 data = response.json()
 # pprint(data)
 print(data['value'])
+
+response = requests.get("https://api.chucknorris.io/jokes/categories")
+print(response.json())
+
+# response = requests.get("https://api.chucknorris.io/jokes/random?category=food")
+params = {
+    "category": "food",
+    # "sdss": "sdads"
+}
+response = requests.get(
+    "https://api.chucknorris.io/jokes/random",
+    params
+)
+print(response.json())
