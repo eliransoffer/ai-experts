@@ -2,7 +2,7 @@ from pprint import pprint
 
 import requests
 
-API_KEY = "cabc6287eb069fc97eaae2dd9e9da023"
+API_KEY = "a0fd03d3b0c43b122f7d6dd519c89fc3"
 
 # Get the city name from the user
 city = input("insert city: ")
@@ -18,6 +18,8 @@ params = {
 
 # Send the request and get the response
 geo_response = requests.get(geo_url, params)
+
+geo_response.raise_for_status()
 
 # Convert the response to JSON
 geo_data = geo_response.json()
